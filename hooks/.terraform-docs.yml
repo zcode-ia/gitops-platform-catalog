@@ -3,11 +3,6 @@ formatter: markdown table
 lockfile:
   enabled: false
 
-recursive:
-  enabled: true
-  path: "./modules"
-  include-main: false
-
 output:
   file: README.md
   mode: inject
