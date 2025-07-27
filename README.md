@@ -7,7 +7,7 @@ Please, install the following dependencies before setup this repository
 * direnv
 * pre-commit
 * shellcheck-py
-* jq
+* npm
 
 ## Repository setup
 Run the follow command to setup the repository
