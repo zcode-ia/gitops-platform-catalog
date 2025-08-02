@@ -9,5 +9,3 @@ jobs:
   release:
     name: Release
     uses: zcode-ia/gitops-workflows/.github/workflows/release.yml@main
-    secrets:
-      github_secret_token: ${{ secrets.SEMANTIC_RELEASE_TOKEN }}
