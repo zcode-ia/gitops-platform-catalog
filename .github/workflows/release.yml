@@ -15,7 +15,7 @@ jobs:
     uses: zcode-ia/gitops-workflows/.github/workflows/release.yml@main
     with:
       owner: ${{ github.repository_owner }}
-      repositories: 'gitops-platform-catalog-private'
+      repositories: 'gitops-platform-catalog'
     secrets:
       github_app_id: ${{ secrets.CREATE_TOKEN_APP_ID }}
       github_app_private_key: ${{ secrets.CREATE_TOKEN_APP_PRIVATE_KEY }}
