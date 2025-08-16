@@ -1,5 +1,9 @@
 # See https://pre-commit.com for more information
 # See https://pre-commit.com/hooks.html for more hooks
+
+default_install_hook_types: [pre-commit, commit-msg]
+default_stages: [pre-commit]
+
 repos:
 -   repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v5.0.0
@@ -55,3 +59,8 @@ repos:
         types: [terraform]
         description: Generate Terraform documentation for changed files
         pass_filenames: true
+    -   id: commitlint
+        name: Commit message lint
+        entry: npx --no-install commitlint --edit
+        language: system
+        stages: [commit-msg]
