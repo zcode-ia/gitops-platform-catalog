@@ -8,4 +8,10 @@ on:
 jobs:
   commit_lint:
     name: Run Commit Lint
-    uses: zcode-ia/gitops-workflows/.github/workflows/commit-lint.yml@35061a1947682fb5c33841d94a9d14886ef5743e # v1.14.1
+    uses: zcode-ia/gitops-workflows/.github/workflows/commit-lint.yml@edad4257e0935309a6cdfe51d8a282cdf8c3e94e # v1.15.0
+    with:
+      owner: ${{ github.repository_owner }}
+      repositories: ${{ github.event.repository.name }}
+    secrets:
+      github_app_id: ${{ secrets.CREATE_TOKEN_APP_ID }}
+      github_app_private_key: ${{ secrets.CREATE_TOKEN_APP_PRIVATE_KEY }}
