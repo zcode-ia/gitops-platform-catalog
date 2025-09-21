@@ -12,7 +12,7 @@ permissions:
 jobs:
   release:
     name: Release
-    uses: zcode-ia/gitops-workflows/.github/workflows/release.yml@35061a1947682fb5c33841d94a9d14886ef5743e # v1.14.1
+    uses: zcode-ia/gitops-workflows/.github/workflows/release.yml@edad4257e0935309a6cdfe51d8a282cdf8c3e94e # v1.15.0
     with:
       owner: ${{ github.repository_owner }}
       repositories: 'gitops-platform-catalog'

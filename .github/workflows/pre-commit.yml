@@ -8,11 +8,15 @@ on:
 jobs:
   github_list_pr_files:
     name: List Modified Files
-    uses: zcode-ia/gitops-workflows/.github/workflows/github-list-pr-files.yml@35061a1947682fb5c33841d94a9d14886ef5743e # v1.14.1
+    uses: zcode-ia/gitops-workflows/.github/workflows/github-list-pr-files.yml@edad4257e0935309a6cdfe51d8a282cdf8c3e94e # v1.15.0
     with:
       github_repository: ${{ github.repository }}
       github_event_pull_request_number: ${{ github.event.pull_request.number }}
+      owner: ${{ github.repository_owner }}
+      repositories: ${{ github.event.repository.name }}
     secrets:
+      github_app_id: ${{ secrets.CREATE_TOKEN_APP_ID }}
+      github_app_private_key: ${{ secrets.CREATE_TOKEN_APP_PRIVATE_KEY }}
       github_secret_token: ${{ secrets.GITHUB_TOKEN }}
 
   pre_commit_check:
@@ -20,7 +24,7 @@ jobs:
     needs:
       - github_list_pr_files
     if: needs.github_list_pr_files.outputs.pr_files_count > 0
-    uses: zcode-ia/gitops-workflows/.github/workflows/pre-commit.yml@35061a1947682fb5c33841d94a9d14886ef5743e # v1.14.1
+    uses: zcode-ia/gitops-workflows/.github/workflows/pre-commit.yml@edad4257e0935309a6cdfe51d8a282cdf8c3e94e # v1.15.0
     with:
       encoded_modified_files: ${{ needs.github_list_pr_files.outputs.encoded_modified_files }}
       owner: ${{ github.repository_owner }}
